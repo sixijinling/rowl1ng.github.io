@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      OpenCV Python 车道线识别
-category: blog
+category: project
 description: 识别车道线，输出黑白图片：车道线纯白（255），其他全黑。
 ---
 
