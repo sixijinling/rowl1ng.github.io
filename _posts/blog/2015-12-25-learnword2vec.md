@@ -8,19 +8,16 @@ description: word2vec的小白起步之路。
 
 ---
 
-啊啊啊
-\begin{equation}
-   E = mc^2
-\end{equation}
+
 ## Multi-Layer Neural Network
 A.3-layer network: Input Layer,Hidden Lyer,Output layer
 Except input units,each unit has a bias.
 
 ### preassumption calculation
 
-\begin{equation}
+$$
 net_{j}=\sum_{i=1}^{d}x_{i}w_{ji}+w_{j0}=\sum_{i=0}^{d}x_{i}w_{ji}=w_{j}^{t}x
-\end{equation}
+$$
 
 Specifically, a signal $x_{i}$ at the input of synapse $i$ connected to nueron $j$ us multiplied by the synaptic weight $w_{ji}$\\
 $i$ refers input layer,$j$ refers hidden layer.$w_{j0}$ is the bias.$x_{0}=+1$\\
