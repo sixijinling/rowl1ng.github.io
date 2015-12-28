@@ -9,6 +9,9 @@ description: word2vec的小白起步之路。
 ---
 
 啊啊啊
+\begin{equation}
+   E = mc^2
+\end{equation}
 ## Multi-Layer Neural Network
 A.3-layer network: Input Layer,Hidden Lyer,Output layer
 Except input units,each unit has a bias.
