@@ -7,7 +7,16 @@ description: word2vec的小白起步之路。
 标签： nlp
 
 ---
-
+## 插播一则消息：MathJax
+word2vec涉及的公式推导太多，所以借助MathJax在html中显示LaTeX数学公式，效果赞赞的。只需要在head里加上两句话：
+```
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+    </script>
+    <script type="text/javascript"
+      src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+```
 
 ## Multi-Layer Neural Network
 A.3-layer network: Input Layer,Hidden Lyer,Output layer
