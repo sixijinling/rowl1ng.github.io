@@ -1,12 +1,12 @@
-
 ---
 layout:     post
 title:      How to learn word2vec 
 category: blog
 description: word2vec的小白起步之路。
 ---
-标签（空格分隔）： word2vec
 
+
+标签（空格分隔）： word2vec
 ---
 ## 插播一则消息：MathJax
 [LaTeX完整教程][1]
