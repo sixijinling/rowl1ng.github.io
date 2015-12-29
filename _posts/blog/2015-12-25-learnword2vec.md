@@ -12,13 +12,13 @@ description: word2vec的小白起步之路。
 [LaTeX完整教程][1]
 [介绍MathJax的中文博客文章][2]
 word2vec涉及的公式推导太多，所以借助MathJax在html中显示LaTeX数学公式，效果赞赞的。在页面中嵌入MathJax :
-```
+```javascript
     <script type="text/javascript"
       src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
 ```
 在head里加上两句话,开启美元符$的inline模式：
-```
+```javascript
     <script type="text/x-mathjax-config">
       MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
     </script>
