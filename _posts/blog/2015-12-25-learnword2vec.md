@@ -24,7 +24,9 @@ Except input units,each unit has a bias.
 
 ### preassumption calculation
 $net_j = \sum_{i=1}^dx_iw_{ji}+w_{j0}$
-
+$$
+\theta_i = \theta_i - \alpha\frac\partial{\partial\theta_i}J(\theta)
+$$
 Specifically, a signal $x_{i}$ at the input of synapse $i$ connected to nueron $j$ us multiplied by the synaptic weight $w_{ji}$\\
 $i$ refers input layer,$j$ refers hidden layer.$w_{j0}$ is the bias.$x_{0}=+1$\\
 
