@@ -23,7 +23,7 @@ A.3-layer network: Input Layer,Hidden Lyer,Output layer
 Except input units,each unit has a bias.
 
 ### preassumption calculation
-$net_j = \sum_i w_{ji}$
+$net_j = \sum_i w_\\{ji\\}$
 $$
 \theta_i = \theta_i - \alpha\frac\partial{\partial\theta_i}J(\theta)
 $$
