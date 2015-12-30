@@ -31,9 +31,12 @@ description: 识别车道线，输出黑白图片：车道线纯白（255），�
  <li>安装pydev(Eclipse)</li>
 </ul>
 ----------
-## 操作 ##
+## 操作
+
 参考的[解决方案][1]
+
 ### 基础操作
+
 #### 1. 读入、输出jpg
 ```python
     for infile in  glob.glob('../photos/test/*.jpg'):
@@ -43,6 +46,7 @@ description: 识别车道线，输出黑白图片：车道线纯白（255），�
          cv2.imwrite('../result/normlaneresult/'+outfile+'.jpg',out)
 ```
 #### 2. **trackbar**实时调节参数
+
 创建trackbar
 ```python 
     cv2.createTrackbar('thrs1', 'fill', 2000, 10000, nothing)
