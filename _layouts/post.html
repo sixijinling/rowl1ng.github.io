@@ -1,37 +1,21 @@
 ---
 layout: default
 ---
-<script type="text/x-mathjax-config">
+<script>
 MathJax.Hub.Config({
-tex2jax: {
-inlineMath: [['$','$'], ['\\(','\\)']],
-processEscapes: true,
-skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-},
- 	  TeX: {
-equationNumbers: {
-autoNumber: ["AMS"],
-useLabelIds: true
-}
-},
-"HTML-CSS": {
-linebreaks: {
-automatic: true
-},
-scale: 85
-},
-SVG: {
-linebreaks: {
-automatic: true
-}
-}
-});
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    });
+    
 MathJax.Hub.Queue(function() {
-var all = MathJax.Hub.getAllJax(), i;
-for(i = 0; i < all.length; i += 1) {
-all[i].SourceElement().parentNode.className += ' has-jax';
-}
-});
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+    
+code.has-jax {font: inherit; font-size: 100%; background: inherit; border: inherit;}
 </script>
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
