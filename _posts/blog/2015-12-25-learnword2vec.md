@@ -54,11 +54,9 @@ markdown和MathJax的冲突：
 A.3-layer network: Input Layer,Hidden Lyer,Output layer.
 Except input units,each unit has a bias.
 ### preassumption calculation
-<div>
 \\begin{equation}
 net_{j} = \sum_{i=1}^{d}x_{i}w_{ji}+w_{j0}=\sum_{i=0}^{d}x_{i}w_{ji}=w_{j}^{t}x
 \\end{equation}
-<\div>
 Specifically, a signal $x_{i}$ at the input of synapse $i$ connected to nueron $j$ us multiplied by the synaptic weight $w_{ji}$.
 $i$ refers input layer,$j$ refers hidden layer.$w_{j0}$ is the bias.$x_{0}=+1$.
 
@@ -119,8 +117,8 @@ for batch learning is defined by the average error energy $J(w)$.
 - firstly define the training bias of output layer:
 
 \\begin{gather}
-\Delta w=-\eta\frac {\partial J(w)}{\partial w} \\
-w(m+1)=w(m)+/Delta w(m)
+\Delta w=-\eta\frac {\partial J(w)}{\partial w} \\\\
+w(m+1)=w(m)+\Delta w(m)
 \\end{gather}
 
 \\begin{gather}
