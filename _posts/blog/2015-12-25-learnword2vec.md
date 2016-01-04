@@ -5,37 +5,60 @@ category: blog
 description: word2vec的小白起步之路。
 ---
 
-标签： word2vec
+标签： word2vec MathJax
 ---
 
 ## 插播一则消息：MathJax
 word2vec涉及的公式推导太多，所以借助MathJax在html中显示LaTeX数学公式，效果赞赞的。
 - [LaTeX完整教程][1]
 - [介绍MathJax的中文博客文章][2]
-在页面中嵌入MathJax :
+- [在Jekyll中使用MathJax][3]
+### 1. 关于博客环境：
+- Github Pages
+- Jekyll
+- rdiscount
+- MathJax
+- Markdown
+在post.html中嵌入MathJax :
 ```
     <script type="text/javascript"
       src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
 ```
-
-在head里加上两句话,开启美元符$的inline模式：
-```
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
-    </script>
-```
-但是还有一个问题，就是markdown和MathJax的冲突：
+### 2. Problem
+markdown和MathJax的冲突：
 > Keep in mind that the browser interprets your text before MathJax does.
 
-对于"\_"和"{}"，markdown会按自己的方式“理解”，于是MathJax就不懂了。好在有[解决方案][3]。
+#### How to fix it?
+在layout 文件里加上 :
+```
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    });
+```
+让MathJAx忽略非latex代码块或者一般的代码块：
+```
+    MathJax.Hub.Queue(function() {
+            var all = MathJax.Hub.getAllJax(), i;
+            for(i=0; i < all.length; i += 1) {
+                all[i].SourceElement().parentNode.className += ' has-jax';
+            }
+        });
+```
+
+
+对于"\_"和"{}"，markdown会按自己的方式“理解”，于是MathJax就不懂了。好在有[解决方案][4]。
 ## Multi-Layer Neural Network
 A.3-layer network: Input Layer,Hidden Lyer,Output layer.
 Except input units,each unit has a bias.
 ### preassumption calculation
+<div>
 \\begin{equation}
 net_{j} = \sum_{i=1}^{d}x_{i}w_{ji}+w_{j0}=\sum_{i=0}^{d}x_{i}w_{ji}=w_{j}^{t}x
 \\end{equation}
+<\div>
 Specifically, a signal $x_{i}$ at the input of synapse $i$ connected to nueron $j$ us multiplied by the synaptic weight $w_{ji}$.
 $i$ refers input layer,$j$ refers hidden layer.$w_{j0}$ is the bias.$x_{0}=+1$.
 
@@ -108,6 +131,8 @@ w(m+1)=w(m)+/Delta w(m)
 
 - input->hidden
 
+
   [1]: http://www.forkosh.com/mathtextutorial.html
   [2]: http://mlworks.cn/posts/introduction-to-mathjax-and-latex-expression/
-  [3]: http://weiyangthecatalyst.name/2013/11/24/solve-markdown-mathjax.html
+  [3]: http://cyukang.com/2013/03/03/try-mathjax.html
+  [4]: http://weiyangthecatalyst.name/2013/11/24/solve-markdown-mathjax.html
